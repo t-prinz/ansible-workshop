@@ -20,7 +20,7 @@
       firewalld:
         service: http
         permanent: true
-        state: disabled
+        state: enabled
       notify: restart firewalld
 
   handlers:
