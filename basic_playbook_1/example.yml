@@ -20,13 +20,13 @@
       firewalld:
         service: http
         permanent: true
-        state: enabled
+        state: disabled
       notify: restart firewalld
 
   handlers:
-    name: restart firewalld
-    service:
-      name: firewalld
-      state: restarted
+    - name: restart firewalld
+      service:
+        name: firewalld
+        state: restarted
 
 
