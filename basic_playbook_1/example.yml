@@ -1,0 +1,23 @@
+---
+- name: Install and setup web server
+  hosts: web
+  become: true
+  remote_user: user
+
+  tasks:
+    - name: Install httpd
+      yum:
+        name: httpd
+        state: present
+
+    - name: Enable httpd
+      service:
+        name: httpd
+        enabled: true
+        state: started
+
+    - name: Enable firewall port
+      firewalld:
+        service: http
+        permanent: true
+        state: enabled
