@@ -21,3 +21,12 @@
         service: http
         permanent: true
         state: enabled
+      notify: restart firewalld
+
+  handlers:
+    name: restart firewalld
+    service:
+      name: firewalld
+      state: restarted
+
+
