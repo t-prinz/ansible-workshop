@@ -14,6 +14,12 @@
    - nagios-devel
   notify: restart httpd
 
+- name: Start firewalld
+  service: name=firewalld state=started enabled=yes
+
+- name: insert firewalld rule for httpd
+  firewalld: port={{ httpd_port }}/tcp permanent=true state=enabled immediate=yes
+
 - name: create nagios config dir
   file: path=/etc/nagios/ansible-managed state=directory
 

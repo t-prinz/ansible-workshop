@@ -4,6 +4,12 @@
 - name: Download and install haproxy
   yum: name=haproxy state=present
 
+- name: Start firewalld
+  service: name=firewalld state=started enabled=yes
+
+- name: insert firewalld rule for httpd
+  firewalld: port={{ listenport }}/tcp permanent=true state=enabled immediate=yes
+
 - name: Configure the haproxy cnf file with hosts
   template: src=haproxy.cfg.j2 dest=/etc/haproxy/haproxy.cfg
   notify: restart haproxy
