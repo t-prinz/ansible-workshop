@@ -1,6 +1,6 @@
 ---
 - name: Install and setup web server
-  hosts: web
+  hosts: webservers
   become: true
   remote_user: user
 

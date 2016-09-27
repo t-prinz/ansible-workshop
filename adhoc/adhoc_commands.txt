@@ -1,9 +1,9 @@
-ansible web -m file -a "path=/opt/cache state=directory" -b
+ansible webservers -m file -a "path=/opt/cache state=directory" -b
 
-ansible web -m yum -a "name=httpd state=present" -b
+ansible webservers -m yum -a "name=httpd state=present" -b
 
-ansible web -m service -a "name=httpd enabled=true state=started" -b
+ansible webservers -m service -a "name=httpd enabled=true state=started" -b
 
-ansible web -m firewalld -a "service=http permanent=true state=enabled" -b
+ansible webservers -m firewalld -a "service=http permanent=true state=enabled" -b
 
-ansible web -m service -a "name=firewalld state=restarted" -b
+ansible webservers -m service -a "name=firewalld state=restarted" -b
