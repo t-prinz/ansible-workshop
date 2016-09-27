@@ -39,6 +39,15 @@
     - dbservers.cfg
     - lbservers.cfg
   notify: restart nagios
+  
+# https://bugzilla.redhat.com/show_bug.cgi?id=1291718  
+- name: nagios patch 
+  file:
+    path: /var/log/nagios/rw
+    state: directory
+    owner: nagios
+    group: nagios
+    mode: 0755
 
 - name: start nagios
   service: name=nagios state=started enabled=yes
