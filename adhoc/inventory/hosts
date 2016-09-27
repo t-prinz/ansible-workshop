@@ -6,7 +6,6 @@ node-3.example.com
 [haproxy]
 haproxy.example.com
 
-[grafana]
-grafana.example.com
-
+[monitoring]
+nagios.example.com
 

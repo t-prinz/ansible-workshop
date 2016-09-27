@@ -9,4 +9,4 @@ node-3.example.com
 haproxy.example.com
 
 [monitoring]
-grafana.example.com
+nagios.example.com
