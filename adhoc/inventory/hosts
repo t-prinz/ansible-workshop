@@ -1,11 +1,12 @@
-[web]
+[webservers]
 node-1.example.com
 node-2.example.com
+
+[dbservers]
 node-3.example.com
 
-[haproxy]
+[lbservers]
 haproxy.example.com
 
 [monitoring]
 nagios.example.com
-
