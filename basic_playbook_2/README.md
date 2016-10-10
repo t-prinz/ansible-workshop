@@ -14,7 +14,7 @@ This workshop begins your foray into developing your first Ansible playbook. In 
 
 Create a basic playbook that
 
-* targets your **entire** inventory
+* targets the `webservers` in the inventory
 * creates a variable that is a list of `vim` and `https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm`
 * installs the above packages in a loop
 * defines a variable named `telegraf_version` and is set to `0.2.4`
@@ -26,7 +26,7 @@ Create a basic playbook that
 * copies `solution/telegraf.conf.j2` to `/etc/opt/telegraf/telegraf.conf` using the template module
 * starts and enables the `telegraf` service
 * uses a handler to restart the `telegraf` service when the `telegraf` package is installed or the `telegraf` configuration file has changed
-
+* execute your playbook, `ansible-playbook -i your_inventory your_playbook.yml`
 
 Verify that telegraf is working properly by running:
 
